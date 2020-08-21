@@ -7,7 +7,7 @@ app = socketio.WSGIApp(sio)
 @sio.event
 def connect(sid, environ):
     print('connect ', sid)
-    sio.emit('new connection',{"data":"Nueva conexion desde python"})
+    sio.emit('new_connection',{"data":"Nueva conexion desde python"})
 
 
 if __name__ == '__main__':
