@@ -1,21 +1,22 @@
 <template>
 <v-container class="container-first">
-
+  <h1 class="display-2 font-weight-bold   align-center text-center justify-center">
+                Bienvenido
+            </h1>
     <v-row class="text-center">
+        
         <v-col class="mb-0 pa-0" cols="12">
-  <h1 class="display-2 font-weight-bold mb-1 contenedor-title d-flex align-center text-center justify-center">
-                        Bienvenido
-                    </h1>
+          
             <v-row justify="center">
                 <v-col cols="12" class="d-flex align-center text-center justify-center">
-                      <v-img :src="require('../assets/images/screen.png')" class=" drop pa-0" contain height="340" />
-                  
+                    <v-img :src="require('../assets/images/screen.png')" class=" drop pa-0" contain height="340" />
+
                     <vue-typed-js class="contenedor" :strings="['!Gracias por elegirnos¡', '¿En que te podemos ayudar?','¿Quieres saber tu saldo?', 'Acerca la manilla al validador','vuelve pronto']" :loop="true" :backSpeed="60" :typeSpeed="100" :startDelay="2000">
                         <h1>Hola <span class="typing "></span></h1>
                     </vue-typed-js>
                 </v-col>
             </v-row>
-          
+
             <v-col class="texto-label" cols="12">
                 <h2 class="headline font-weight-bold mb-3 title-1">
                     id: {{data.id}}
