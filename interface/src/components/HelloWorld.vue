@@ -1,17 +1,17 @@
 <template>
 <v-container class="container-first">
-  <h1 class="display-2 font-weight-bold   align-center text-center justify-center">
-                Bienvenido
-            </h1>
+    <h1 class="display-2 font-weight-bold   align-center text-center justify-center">
+        Bienvenido
+    </h1>
     <v-row class="text-center">
-        
+
         <v-col class="mb-0 pa-0" cols="12">
-          
+
             <v-row justify="center">
                 <v-col cols="12" class="d-flex align-center text-center justify-center">
                     <v-img :src="require('../assets/images/screen.png')" class=" drop pa-0" contain height="340" />
 
-                    <vue-typed-js class="contenedor" :strings="['!Gracias por elegirnos¡', '¿En que te podemos ayudar?','¿Quieres saber tu saldo?', 'Acerca la manilla al validador','vuelve pronto']" :loop="true" :backSpeed="60" :typeSpeed="100" :startDelay="2000">
+                    <vue-typed-js  class="contenedor" :strings="['!Gracias por elegirnos¡', '¿En que te podemos ayudar?','¿Quieres saber tu saldo?', 'Acerca la manilla al validador','vuelve pronto']" :loop="true" :backSpeed="60" :typeSpeed="100" :startDelay="2000">
                         <h1>Hola <span class="typing "></span></h1>
                     </vue-typed-js>
                 </v-col>
@@ -71,7 +71,16 @@ export default {
     margin: auto;
     overflow: hidden;
     z-index: 9;
+  font-size: 1rem!important;
 
+}
+@media (max-width: 600px){
+  .contenedor {   font-size: .6rem!important;
+}
+}
+@media (min-width: 600px) and (max-width: 800px){
+  .contenedor {   font-size: .8rem!important;
+}
 }
 
 .container-first {
@@ -87,5 +96,6 @@ export default {
     margin: auto;
     overflow: hidden;
     z-index: 9;
+  
 }
 </style>
