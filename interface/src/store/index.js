@@ -5,17 +5,21 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    data1: 0
+    title: 'Hello world title',
+    data: 0
+  },
+  getters:{
+    title: state => state.title,
+    data: state=> state.data
+   
   },
   mutations: {
     SOCKET_NEW_CONNECTION  (state, data){
-      state.data1 = data;
+      state.data = data
       console.log(data.id)
     }
   },
-  actions: {
-    
-  },
+
   modules: {
   }
 })
