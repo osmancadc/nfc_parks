@@ -13,6 +13,7 @@
     "roboto-fontface": "*",
     "typed.js": "^2.0.11",
     "vue": "^2.6.11",
+    "vue-cli": "^2.9.6",
     "vue-router": "^3.2.0",
     "vue-socket.io": "^3.0.10",
     "vue-typed-js": "^0.1.2",

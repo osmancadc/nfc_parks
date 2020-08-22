@@ -1,13 +1,13 @@
 import socketio
 import eventlet
 
-sio = socketio.Server()
+sio = socketio.Server(cors_allowed_origins='*')
 app = socketio.WSGIApp(sio)
 
 @sio.event
 def connect(sid, environ):
     print('connect ', sid)
-    sio.emit('new_connection',{"data":"Nueva conexion desde python"})
+    sio.emit('NEW_CONNECTION',{"id":"01234567","money":56450,"passport":"Pasaporte platino full"})
 
 
 if __name__ == '__main__':

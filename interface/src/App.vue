@@ -33,22 +33,22 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+    import HelloWorld from './components/HelloWorld';
 
-export default {
-    name: 'App',
+    export default {
+        name: 'App',
 
-    components: {
-        HelloWorld,
-    },
+        components: {
+            HelloWorld,
+        },
 
-    data: () => ({
-        //
-    }),
-};
+        data: () => ({
+            //
+        }),
+    };
 </script>
 <style lang="scss" scoped>
-.drop {
-    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.7));
-}
+    .drop {
+        filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.7));
+    }
 </style>

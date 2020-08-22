@@ -15,13 +15,14 @@
             </v-col>
             <v-col class="texto-label" cols="12">
                 <h2 class="headline font-weight-bold mb-3 title-1">
-                    id: _____________________
+                    id: {{state.data.id}}
                 </h2>
                 <h3 class="headline font-weight-bold mb-3 title-1">
-                    Saldo: _________________
+                    
+                    Saldo: {{state.data.money}}
                 </h3>
                 <h4 class="headline font-weight-bold mb-3 title-1">
-                    Pasaporte: _____________
+                    Pasaporte: {{state.data.passport}}
                 </h4>
             </v-col>
         </v-col>
@@ -30,13 +31,28 @@
 </template>
 
 <script>
-export default {
-    name: 'HelloWorld',
+import Vuex from 'vuex'
+import Vue from 'vue'
 
-    data: () => ({
+Vue.use(Vuex)
 
-    }),
-}
+export default new Vuex.Store({
+  state: {
+    data: {}
+  },
+  mutations: {
+    SOCKET_NEW_CONNECTION  (state, data){
+      this.state.data = data;
+      console.log(this.state.data)
+    }
+  },
+  actions: {
+    
+  },
+  modules: {
+  }
+})
+
 </script>
 
 <style lang="scss" scoped>
