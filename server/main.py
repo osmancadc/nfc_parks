@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import socketio
 import eventlet
 
@@ -14,3 +15,5 @@ def connect(sid, environ):
 
 if __name__ == '__main__':
     eventlet.wsgi.server(eventlet.listen(('localhost', 4567)), app)
+=======
+>>>>>>> e35cd6be9874d6d1d9c934c7633ca31529bf4a7d
