@@ -4,7 +4,6 @@
         Bienvenido
     </h1>
     <v-row class="text-center">
-
         <v-col class="mb-0 pa-0" cols="12">
             <div max-width="50vw">
                 <v-row justify="center">
@@ -20,17 +19,50 @@
     </v-row>
     <v-row class="align-center text-center justify-center  container-ides  items-data ">
         <v-col class="texto-label title-container  " md="6" sm="12" xs="12">
-            <h2 class="headline font-weight-bold mb-3 title-1 text-sm-left ">
+            <h2 v-if="data.id < 0 " class="headline font-weight-bold mb-3 title-1 text-sm-left ">
                 <span class="pr-2 title-information">Id: </span> {{data.id}}
             </h2>
-            <h3 class="headline font-weight-bold mb-3 title-1 text-sm-left  ">
-                <span class="pr-2 title-information "> Saldo: </span> ${{data.money}}
+            <h2 v-if="data.id > 0 " class="headline font-weight-bold mb-3 title-1 text-sm-left ">
+                <span class="pr-2 title-information">Id: </span> {{newData.id}}
+            </h2>
+            <h3 v-if="data.money !== 0 " class="headline font-weight-bold mb-3 title-1 text-sm-left">
+                <span class="pr-2 title-information"> Saldo: </span> ${{data.money}}
+            </h3>
+             <h3  v-if="data.money === 0"  class="headline font-weight-bold mb-3 title-1 text-sm-left">
+                <span class="pr-2 title-information"> Saldo: </span> ${{newData.money}}
             </h3>
             <h4 class="headline font-weight-bold mb-3 title-1 text-sm-left">
                 <span class="pr-2 title-information">Usuario:</span> {{data.passport}}
             </h4>
         </v-col>
     </v-row>
+    <div class="text-center">
+        <v-btn color="primary" dark @click.stop="dialog = false">
+            Open Dialog
+        </v-btn>
+        <v-dialog v-model="dialog" max-width="290">
+            <v-card>
+                <v-card-title class="headline">New Read</v-card-title>
+                <v-card-text>
+                    ID: {{newRead.id}} <br>
+                    SALDO: {{newRead.money}}
+                </v-card-text>
+                <v-card-text>
+
+                </v-card-text>
+                <h3 class="text-center">Loading...</h3>
+                <div class="text-center">
+                    <v-progress-circular :size="70" :width="7" color="info" indeterminate></v-progress-circular>
+                </div>
+                <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn color="info" text @click="dialog = false">
+                        salir
+                    </v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
+    </div>
 </v-container>
 </template>
 
@@ -42,13 +74,21 @@ import {
 
 export default {
     name: 'HelloWorld',
-    data: () => ({}),
+    data: () => ({
+        dialog: true,
+    }),
     computed: {
         ...mapGetters([
             'title'
         ]),
         ...mapGetters([
             'data'
+        ]),
+        ...mapGetters([
+            'newRead'
+        ]),
+        ...mapGetters([
+            'newData'
         ]),
     },
 }
@@ -118,13 +158,15 @@ export default {
     .contenedor {
         font-size: .8rem !important;
     }
-      .drop {
+
+    .drop {
         max-width: 90vw !important;
     }
 }
+
 @media (min-width: 800px) and (max-width: 1200px) {
-   
-      .drop {
+
+    .drop {
         max-width: 90vw !important;
     }
 }
@@ -137,15 +179,18 @@ export default {
     .drop {
         max-width: 90vw !important;
     }
+
     .title-welcome {
         font-size: 2.3rem !important;
     }
 }
+
 @media (min-width: 900px) and (max-width:1400px) {
     .contenedor {
         font-size: 1.1rem !important;
     }
 }
+
 @media (min-width: 1500px) and (max-width:3000px) {
     .contenedor {
         font-size: 1.4rem !important;
