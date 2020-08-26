@@ -1,5 +1,10 @@
 <template>
+</div>
 <v-container class="container-first">
+    <div class="loading" id="loading">
+        <img src="../assets/images/loading.svg" alt="loader">
+        <h2>Leyendo Tarjeta: {{data.id}}</h2>
+    </div>
     <h1 class="display-2 font-weight-bold   align-center text-center justify-center title-welcome">
         Bienvenido
     </h1>
@@ -19,51 +24,21 @@
     </v-row>
     <v-row class="align-center text-center justify-center  container-ides  items-data ">
         <v-col class="texto-label title-container  " md="6" sm="12" xs="12">
-            <h2 v-if="data.id < 0 " class="headline font-weight-bold mb-3 title-1 text-sm-left ">
+
+            <span class="pr-2 title-information">Id: </span> {{data.id}}
+            </h2>
+            <h2 class="headline font-weight-bold mb-3 title-1 text-sm-left ">
                 <span class="pr-2 title-information">Id: </span> {{data.id}}
             </h2>
-            <h2 v-if="data.id > 0 " class="headline font-weight-bold mb-3 title-1 text-sm-left ">
-                <span class="pr-2 title-information">Id: </span> {{newData.id}}
-            </h2>
-            <h3 v-if="data.money !== 0 " class="headline font-weight-bold mb-3 title-1 text-sm-left">
-                <span class="pr-2 title-information"> Saldo: </span> ${{data.money}}
-            </h3>
-             <h3  v-if="data.money === 0"  class="headline font-weight-bold mb-3 title-1 text-sm-left">
-                <span class="pr-2 title-information"> Saldo: </span> ${{newData.money}}
-            </h3>
+            <span class="pr-2 title-information">Id: </span> {{data.id}}
             <h4 class="headline font-weight-bold mb-3 title-1 text-sm-left">
                 <span class="pr-2 title-information">Usuario:</span> {{data.passport}}
             </h4>
         </v-col>
     </v-row>
-    <div class="text-center">
-        <v-btn color="primary" dark @click.stop="dialog = false">
-            Open Dialog
-        </v-btn>
-        <v-dialog v-model="dialog" max-width="290">
-            <v-card>
-                <v-card-title class="headline">New Read</v-card-title>
-                <v-card-text>
-                    ID: {{newRead.id}} <br>
-                    SALDO: {{newRead.money}}
-                </v-card-text>
-                <v-card-text>
-
-                </v-card-text>
-                <h3 class="text-center">Loading...</h3>
-                <div class="text-center">
-                    <v-progress-circular :size="70" :width="7" color="info" indeterminate></v-progress-circular>
-                </div>
-                <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn color="info" text @click="dialog = false">
-                        salir
-                    </v-btn>
-                </v-card-actions>
-            </v-card>
-        </v-dialog>
-    </div>
 </v-container>
+
+
 </template>
 
 <script>
@@ -75,20 +50,11 @@ import {
 export default {
     name: 'HelloWorld',
     data: () => ({
-        dialog: true,
+
     }),
     computed: {
         ...mapGetters([
-            'title'
-        ]),
-        ...mapGetters([
             'data'
-        ]),
-        ...mapGetters([
-            'newRead'
-        ]),
-        ...mapGetters([
-            'newData'
         ]),
     },
 }
@@ -208,5 +174,30 @@ export default {
     margin: auto;
     overflow: hidden;
     z-index: 9;
+}
+.loading{
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20!important;
+    width: 100%;
+    height: 100%;
+    display: none;
+
+}
+.loading img{
+    position: absolute;
+    top:25%;
+    left:35%;
+    height: 50%;
+    width: auto;
+    
+}
+.loading h2{
+    position: absolute;
+    top: 75%;
+    left:30%;
+    color: #fff;
 }
 </style>

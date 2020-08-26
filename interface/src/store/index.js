@@ -7,30 +7,19 @@ export default new Vuex.Store({
   state: {
     title: 'Hello world title',
     data: 0,
-    newData: 0,
-    newRead: 0
   },
   getters: {
-    title: state => state.title,
     data: state => state.data,
-    newData: state => state.newData,
-    newRead: state => state.newRead
-
   },
   mutations: {
-    SOCKET_NEW_CONNECTION(state, data) {
+    SOCKET_NEW_BAND(state, data) {
       state.data = data
-      console.log(data.id)
+      document.getElementById('loading').style.display = 'block';
     },
-
-    SOCKET_NEW_DATA(state, newData) {
-      state.newData = newData
-      console.log(newData.id)
-    },
-    SOCKET_NEW_READ(state, newRead) {
-      state.newRead = newRead
-      console.log(newRead.money)
-    },
+    SOCKET_DATA(state, data){
+      state.data = data
+      document.getElementById('loading').style.display = 'none';
+    }
   },
 
   modules: {}

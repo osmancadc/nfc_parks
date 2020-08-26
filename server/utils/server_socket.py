@@ -7,7 +7,8 @@ app = socketio.WSGIApp(sio)
 @sio.event
 def connect(sid, environ):
     print('connect ', sid)
-    sio.emit('NEW_CONNECTION',{"id":"01234567","money":56450,"passport":"Pasaporte platino full"})
+    sio.emit('NEW_BAND',{"id":"0123456"})
+    
 
 
 if __name__ == '__main__':
