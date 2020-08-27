@@ -1,5 +1,4 @@
 <template>
-</div>
 <v-container class="container-first">
     <div class="loading" id="loading">
         <img src="../assets/images/loading.svg" alt="loader">
