@@ -45,7 +45,8 @@
 import {
     mapGetters
 } from 'vuex'
-// import {mapActions} from 'vuex'
+
+import {mapActions} from 'vuex'
 
 export default {
     name: 'HelloWorld',
@@ -55,6 +56,9 @@ export default {
     computed: {
         ...mapGetters([
             'data'
+        ]),
+        ...mapActions([
+            'loading'
         ]),
     },
 }
