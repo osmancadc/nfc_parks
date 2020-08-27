@@ -24,21 +24,19 @@
     </v-row>
     <v-row class="align-center text-center justify-center  container-ides  items-data ">
         <v-col class="texto-label title-container  " md="6" sm="12" xs="12">
-
-            <span class="pr-2 title-information">Id: </span> {{data.id}}
-            </h2>
-            <h2 class="headline font-weight-bold mb-3 title-1 text-sm-left ">
+          
+            <h4 class="headline font-weight-bold mb-3 title-1 text-sm-left ">
                 <span class="pr-2 title-information">Id: </span> {{data.id}}
-            </h2>
-            <span class="pr-2 title-information">Id: </span> {{data.id}}
+            </h4>
+             <h4 class="headline font-weight-bold mb-3 title-1 text-sm-left ">
+                <span class="pr-2 title-information">Saldo: </span> {{data.money}}
+            </h4>
             <h4 class="headline font-weight-bold mb-3 title-1 text-sm-left">
                 <span class="pr-2 title-information">Usuario:</span> {{data.passport}}
             </h4>
         </v-col>
     </v-row>
 </v-container>
-
-
 </template>
 
 <script>
@@ -46,7 +44,9 @@ import {
     mapGetters
 } from 'vuex'
 
-import {mapActions} from 'vuex'
+import {
+    mapActions
+} from 'vuex'
 
 export default {
     name: 'HelloWorld',
@@ -179,29 +179,32 @@ export default {
     overflow: hidden;
     z-index: 9;
 }
-.loading{
+
+.loading {
     background: rgba(0, 0, 0, 0.6);
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 20!important;
+    z-index: 20 !important;
     width: 100%;
     height: 100%;
     display: none;
 
 }
-.loading img{
+
+.loading img {
     position: absolute;
-    top:25%;
-    left:35%;
+    top: 25%;
+    left: 35%;
     height: 50%;
     width: auto;
-    
+
 }
-.loading h2{
+
+.loading h2 {
     position: absolute;
     top: 75%;
-    left:30%;
+    left: 30%;
     color: #fff;
 }
 </style>
